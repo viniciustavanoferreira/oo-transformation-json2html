@@ -14,7 +14,7 @@ CALL TRANSFORMATION id SOURCE itab = it_aux
 DATA(iv_json) = lr_json->get_output( ).
 
 CALL TRANSFORMATION sjson2html SOURCE XML iv_json
-                               RESULT XML DATA(lr_html).
+                               RESULT XML DATA(iv_html).
 
 cl_abap_browser=>show_html( html_string =
-  cl_abap_codepage=>convert_from( lr_html ) ).
+  cl_abap_codepage=>convert_from( iv_html ) ).
